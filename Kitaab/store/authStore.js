@@ -9,7 +9,7 @@ export const useAuthStore = create((set) => ({
     register: async (username,email,password) =>{
         set({isLoading:true});
         try{
-            const response = await fetch(`https://kitaab-backend.onrender.com/api/auth/register`,{
+            const response = await fetch("https://kitaab-backend.onrender.com/api/auth/register",{
              method:"POST",
              headers:{
                     "Content-Type":"application/json",
