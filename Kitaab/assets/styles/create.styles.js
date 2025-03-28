@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     title: {
-        fontSize: 24,
-        fontWeight: "700",
+        fontSize: 22,
+        fontWeight: "900",
         color: COLORS.textPrimary,
         marginBottom: 8,
     },
