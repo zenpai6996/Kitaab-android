@@ -49,6 +49,11 @@ export default function Create() {
                 base64:true,
             })
             if(!result.canceled){
+                // Check file size (5MB limit example)
+                if(result.assets[0].fileSize > 5 * 1024 * 1024) {
+                    Alert.alert("File Too Large", "Please select an image smaller than 5MB");
+                    return;
+                }
                 setImage((result.assets[0].uri));
                 //if base64 is provide , use it
                 if(result.assets[0].base64){
@@ -74,7 +79,7 @@ export default function Create() {
         }
         try{
            setLoading(true);
-           console.log(token);
+
            //get file extension from URI or default to jpeg
             const uriParts = image.split(".");
             const fileType = uriParts[uriParts.length -1]
@@ -96,8 +101,16 @@ export default function Create() {
                 }),
             })
             const data = await response.json();
-            if(!response.ok) throw new Error(data.message || "Something went Wrong");
-            Alert.alert("Success","Your book recommendation has been posted!");
+
+            if(!response.ok) {
+                const errorData = await response.json();
+                if(response.status === 413) { // 413 is Payload Too Large
+                    throw new Error("The image is too large. Please select a smaller file.");
+                }
+                throw new Error(errorData.message || "Something went wrong");
+            }
+
+            Alert.alert("Congrats!!👏","Your book recommendation has been posted!");
             setTitle("");
             setCaption("");
             setRating(3);
