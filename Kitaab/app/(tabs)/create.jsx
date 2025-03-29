@@ -19,6 +19,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {API_URL} from "../../constants/api";
+import {useAuthStore} from "../../store/authStore";
 export default function Create() {
     const [title, setTitle] = React.useState("");
     const [caption, setCaption] = useState("");
@@ -28,7 +29,7 @@ export default function Create() {
     const [loading, setLoading] = useState(false);
 
     const router = useRouter();
-
+    const {token} = useAuthStore();
     const pickImage = async () => {
         try{
             if(Platform.OS !== "web"){
@@ -73,7 +74,6 @@ export default function Create() {
         }
         try{
            setLoading(true);
-           const token = await AsyncStorage.getItem("token");
            console.log(token);
            //get file extension from URI or default to jpeg
             const uriParts = image.split(".");
