@@ -17,6 +17,8 @@ import {Ionicons} from "@expo/vector-icons";
 import COLORS from "../../constants/colors";
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {API_URL} from "../../constants/api";
 export default function Create() {
     const [title, setTitle] = React.useState("");
     const [caption, setCaption] = useState("");
@@ -65,8 +67,49 @@ export default function Create() {
     };
 
     const handleSubmit = async () => {
+        if(!title || !caption || !imageBase64 || !rating){
+            Alert.alert("Error","Please fill in all fields");
+            return;
+        }
+        try{
+           setLoading(true);
+           const token = await AsyncStorage.getItem("token");
+           console.log(token);
+           //get file extension from URI or default to jpeg
+            const uriParts = image.split(".");
+            const fileType = uriParts[uriParts.length -1]
+            const imageType = fileType ? `image/${fileType.toLowerCase()}` : "image/jpeg";
 
-    }
+            const imageDataUrl = `data:${imageType};base64,${imageBase64}`;
+
+            const response = await fetch(`${API_URL}/books`,{
+                method:"POST",
+                headers:{
+                    Authorization:`Bearer ${token}`,
+                    "Content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    title,
+                    caption,
+                    rating:rating.toString(),
+                    image:imageDataUrl,
+                }),
+            })
+            const data = await response.json();
+            if(!response.ok) throw new Error(data.message || "Something went Wrong");
+            Alert.alert("Success","Your book recommendation has been posted!");
+            setTitle("");
+            setCaption("");
+            setRating(3);
+            setImage(null);
+            setImageBase64(null);
+        }catch(error){
+           console.error("Error Creating post:",error );
+           Alert.alert("Error",error.message || "Something went Wrong");
+        }finally {
+            setLoading(false);
+        }
+    };
     const renderRatingPicker = () => {
         const stars =[];
         for(let i=1 ; i <= 5 ;i++){
