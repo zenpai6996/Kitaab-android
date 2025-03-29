@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 24,
-        fontFamily: "JetBrainsMono-Medium",
+        fontFamily: "SpaceMono-Regular",
         letterSpacing: 0.5,
         color: COLORS.primary,
         marginBottom: 8,
