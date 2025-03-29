@@ -22,25 +22,18 @@ export default function Home() {
     const fetchBooks = async (pageNum=1,refresh=false) =>{
         try{
             if(refresh) setRefreshing(true);
-            else if (pageNum === 1) setLoading(true);
+            else setLoading(true);
 
-            const response = await fetch(`${API_URL}/books?page=${pageNum}&limit=5`,{
-                headers: {Authorization:`Bearer ${token}`},
+            const lastBookId = refresh ? null : books.length ? books[books.length - 1]._id : null; // Get last book’s ID
+
+            const response = await fetch(`${API_URL}/books?limit=5${lastBookId ? `&lastBookId=${lastBookId}` : ""}`, {
+                headers: { Authorization: `Bearer ${token}` },
             });
 
             const data = await response.json();
             if(!response.ok) throw new Error(data.message ||"Failed to fetch books");
-           //todo fix it later
-           //  setBooks((prevBooks) => [...prevBooks, ...data.books]);
-            const uniqueBooks =
-                refresh || pageNum === 1
-                    ? data.books
-                    : Array.from(new Set([...books,...data.books].map((book) => book._id))).map((id) =>
-                        [...books,...data.books].find((book) => book._id === id)
-                    );
-            setBooks(uniqueBooks);
-            setHasMore(data.books.length > 0 && pageNum < data.totalPages);
-            setPage(pageNum);
+            setBooks(refresh ? data.books : [...books, ...data.books]); // Append new books
+            setHasMore(data.books.length > 0);
         }catch(error){
             console.log("Error fetching books",error);
             if(refresh) setRefreshing(false)
@@ -55,7 +48,7 @@ export default function Home() {
 
     const handleLoadMore = async () => {
         if(hasMore && !loading && !refreshing){
-            await fetchBooks(page + 1);
+            await fetchBooks();
         }
     };
 
