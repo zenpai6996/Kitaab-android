@@ -33,15 +33,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 - ✅ Smooth UI with **React Native & Expo** 🎨  
 
 
-## 📷 Screenshots  
-<p align="center">
-  
-  <img src="https://github.com/user-attachments/assets/c79e4729-7c27-4602-a10c-31fba5ad475c" width="200">
-  <img src="https://github.com/user-attachments/assets/d1b03c0a-0e21-459e-80f6-43475bd23279" width="200" >
-  <img src="https://github.com/user-attachments/assets/18714507-f2ec-4b68-aed0-2b271ae7a812" width="200">
-  <img src="https://github.com/user-attachments/assets/5f2db32c-4c43-456e-a186-b844ccfc9c5c" width="200">
 
-</p>
 
 
 
