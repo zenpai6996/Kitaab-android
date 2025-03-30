@@ -135,7 +135,7 @@ export default function Create() {
                    <Ionicons
                    name={i <= rating ? "star" : "star-outline"}
                    size={32}
-                   color={i <= rating ? "#f4b400" : COLORS.textSecondary}
+                   color={i <= rating ? "#f4b400" : COLORS.placeholderText}
                    />
                 </TouchableOpacity>
             );

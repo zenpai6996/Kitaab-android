@@ -10,6 +10,8 @@ import {Ionicons} from "@expo/vector-icons";
 import COLORS from "../../constants/colors";
 import {Image} from "expo-image";
 import Loader from "../../components/Loader";
+import SwitchTheme from "../../components/switchTheme";
+import {useThemeStore} from "../../store/themeStore";
 
 export default function ProfileTab() {
     const [books, setBooks] = useState([]);
@@ -18,6 +20,7 @@ export default function ProfileTab() {
     const [deleteBookId, setDeleteBookId] = useState(null);
     const router= useRouter();
     const {token} = useAuthStore()
+
 
 
 

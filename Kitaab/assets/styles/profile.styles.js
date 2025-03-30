@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     email: {
         fontSize: 14,
-        color: COLORS.textSecondary,
+        color: COLORS.textDark,
         marginBottom: 4,
     },
     memberSince: {

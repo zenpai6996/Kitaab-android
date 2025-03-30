@@ -18,8 +18,8 @@ export default function TabLayout() {
             },
             headerShadowVisible:false,
             tabBarStyle:{
-                backgroundColor:COLORS.cardBackground,
-                borderTopWidth:1,
+                backgroundColor:COLORS.background,
+                borderTopWidth:0,
                 borderTopColor:COLORS.border,
                 paddingTop:5,
                 paddingBottom:insets.bottom,

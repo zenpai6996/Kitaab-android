@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.zenpai_6996.Kitaab"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +37,8 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },"fonts": [
+    },
+    "fonts": [
       {
         "family": "JetBrainsMono-Medium",
         "fonts": [
@@ -47,6 +49,14 @@
           }
         ]
       }
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "35bc06e7-46cf-462c-ae1f-6353d1d670b0"
+      }
+    }
   }
 }
