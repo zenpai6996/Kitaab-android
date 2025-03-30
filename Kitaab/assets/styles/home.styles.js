@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {Platform, StyleSheet} from "react-native";
 import COLORS from "../../constants/colors";
 
 const styles = StyleSheet.create({
@@ -12,6 +12,32 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: COLORS.background,
     },
+    paginationContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 15,
+    },
+    disabledButton: {
+        backgroundColor: COLORS.textSecondary,
+        opacity: 0.5,
+    },
+    paginationButton: {
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        backgroundColor: COLORS.primary,
+        borderRadius: 20,
+    },
+    paginationText: {
+        color: COLORS.white,
+        fontWeight: 'bold',
+
+    },
+    pageNumber: {
+        fontSize: 16,
+        color: COLORS.textPrimary,
+        paddingRight:65
+    },
     listContainer: {
         padding: 16,
         paddingBottom: 80,
@@ -22,7 +48,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 24,
-        fontFamily: "SpaceMono-Regular",
+        fontFamily:"JetBrainsMono-Medium",
         letterSpacing: 0.5,
         color: COLORS.primary,
         marginBottom: 8,

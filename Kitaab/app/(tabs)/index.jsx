@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, FlatList, ActivityIndicator} from 'react-native'
+import {View, Text, TouchableOpacity, FlatList, ActivityIndicator, RefreshControl} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import {useAuthStore} from "../../store/authStore";
 import styles from "../../assets/styles/home.styles";
@@ -7,7 +7,7 @@ import {Image} from "expo-image";
 import {Ionicons} from "@expo/vector-icons";
 import COLORS from "../../constants/colors";
 import {formatPublishDate} from "../../lib/utils";
-
+import Loader from "../../components/Loader";
 
 export default function Home() {
 
@@ -22,37 +22,49 @@ export default function Home() {
     const fetchBooks = async (pageNum=1,refresh=false) =>{
         try{
             if(refresh) setRefreshing(true);
-            else setLoading(true);
+            else if (pageNum === 1) setLoading(true);
 
-            const lastBookId = refresh ? null : books.length ? books[books.length - 1]._id : null; // Get last book’s ID
-
-            const response = await fetch(`${API_URL}/books?limit=5${lastBookId ? `&lastBookId=${lastBookId}` : ""}`, {
-                headers: { Authorization: `Bearer ${token}` },
+            const response = await fetch(`${API_URL}/books?page=${pageNum}&limit=3`,{
+                headers: {Authorization:`Bearer ${token}`},
             });
+
 
             const data = await response.json();
             if(!response.ok) throw new Error(data.message ||"Failed to fetch books");
-            setBooks(refresh ? data.books : [...books, ...data.books]); // Append new books
-            setHasMore(data.books.length > 0);
+
+            //todo fix it later
+            //  setBooks((prevBooks) => [...prevBooks, ...data.books]);
+            const UniqueBooks =
+                refresh || pageNum ===1
+                    ? data.books
+                    : [...new Map([...books, ...data.books].map((book) => [book._id, book])).values()];
+            setBooks(UniqueBooks);
+            setHasMore(pageNum < data.totalPages);
+            setPage(pageNum);
+
+
         }catch(error){
             console.log("Error fetching books",error);
+
+        }finally {
             if(refresh) setRefreshing(false)
             else setLoading(false);
         }
     }
 
-
     useEffect(() => {
         fetchBooks()
     }, []);
 
-    const handleLoadMore = async () => {
-        if(hasMore && !loading && !refreshing){
-            await fetchBooks();
+    const handleLoadMore =async () => {
+        if (hasMore || !loading) {
+            await fetchBooks(page + 1);
+            setPage(page + 1);
+
         }
     };
 
-   const renderItem = ({item})=> (
+    const renderItem = ({item})=> (
         <View style={styles.bookCard}>
             <View style={styles.bookHeader}>
                 <View style={styles.userInfo}>
@@ -88,6 +100,9 @@ export default function Home() {
         return stars;
    }
 
+    if(loading) return <Loader />
+
+
     return (
         <View style={styles.container}>
             <FlatList
@@ -98,23 +113,31 @@ export default function Home() {
                 showsVerticalScrollIndicator={false}
                 onEndReached={handleLoadMore}
                 onEndReachedThreshold={0.1}
+                refreshControl={
+                <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={() => fetchBooks(1,true)}
+                    colors={[COLORS.primary]}
+                    tintColor={COLORS.primary}
+                />
+                }
                 ListHeaderComponent ={
-                <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Kitaab📖</Text>
-                    <Text style={styles.headerSubtitle}>Discover great reads ᕦ(ò_óˇ)ᕤ</Text>
-                </View>
+                    <View style={styles.header}>
+                        <Text style={[styles.headerTitle,{fontfamily:"JetBrainsMono"}]}>Kitaab📖</Text>
+                        <Text style={styles.headerSubtitle}>Discover great reads ᕦ(ò_óˇ)ᕤ</Text>
+                    </View>
                 }
                 ListFooterComponent={
                     hasMore && books.length > 0 ? (
-                            <ActivityIndicator size="large" style={styles.footerLoader} color={COLORS.primary} />
+                        <ActivityIndicator size="large" style={styles.footerLoader} color={COLORS.primary} />
                     ) : null
                 }
                 ListEmptyComponent={
-                <View style={styles.emptyContainer}>
-                    <Ionicons name="book-outline" size={60} color={COLORS.textSecondary}/>
-                    <Text style={styles.emptyText}>No Recommendations yet</Text>
-                    <Text style={styles.emptySubtext}>Be the first to share a recommendation</Text>
-                </View>
+                    <View style={styles.emptyContainer}>
+                        <Ionicons name="book-outline" size={60} color={COLORS.textSecondary}/>
+                        <Text style={styles.emptyText}>No Recommendations yet</Text>
+                        <Text style={styles.emptySubtext}>Be the first to share a recommendation</Text>
+                    </View>
                 }
 
             />
