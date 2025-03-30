@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=22&center=true&vCenter=true&width=600&lines=Welcome+to+Kitaab📖;Discover+Great+Books;Share+Your+Recommendations!">
+  <img src="https://readme-typing-svg.herokuapp.com?size=30&center=true&vCenter=true&width=600&lines=Welcome+to+Kitaab📖;Discover+Great+Books;Share+Your+Recommendations!">
 </p>
 
 
