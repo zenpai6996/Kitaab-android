@@ -11,7 +11,9 @@
 
 <p align="center"><i>A book recommendation platform built with React Native & Expo </i></p>
 
-[Backend](https://github.com/zenpai6996/Kitaab-backend)
+ <p> align="center"><i> [Backend](https://github.com/zenpai6996/Kitaab-backend)</i></p>
+
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
