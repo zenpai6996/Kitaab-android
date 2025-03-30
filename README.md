@@ -30,7 +30,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 - ✅ Add your favorite books with captions & ratings ⭐  
 - ✅ User profiles with personalized book lists 👤  
 - ✅ Infinite scrolling  🚀  
-- ✅[Backend(https://github.com /zenpai6996/bhaiKitaab-backend)
+- ✅[Backend](https://github.com /zenpai6996/bhaiKitaab-backend)
 
 
 
