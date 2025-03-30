@@ -29,7 +29,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 - ✅ Browse & discover book recommendations 📚  
 - ✅ Add your favorite books with captions & ratings ⭐  
 - ✅ User profiles with personalized book lists 👤  
-- ✅ Infinite scrolling & pull-to-refresh 🚀  
+- ✅ Infinite scrolling  🚀  
 - ✅ Smooth UI with **React Native & Expo** 🎨  
 
 
