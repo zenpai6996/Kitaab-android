@@ -25,7 +25,7 @@
   <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white">
 </p>
 
-<p> align="center">[Backend](https://github.com/zenpai6996/Kitaab-backend)</p>
+[Backend](https://github.com/zenpai6996/Kitaab-backend)
 
 
 ## 📖 About  
