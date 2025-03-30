@@ -11,7 +11,7 @@
 
 <p align="center"><i>A book recommendation platform built with React Native & Expo </i></p>
 
- <p> align="center"><i> [Backend](https://github.com/zenpai6996/Kitaab-backend)</i></p>
+  
 
 
 
@@ -24,6 +24,8 @@
   <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens">
   <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white">
 </p>
+
+[Backend](https://github.com/zenpai6996/Kitaab-backend)
 
 
 ## 📖 About  
