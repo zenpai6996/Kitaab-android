@@ -9,7 +9,9 @@
 
 
 
-<p align="center"><i>A book recommendation platform built with React Native & Expo</i></p>
+<p align="center"><i>A book recommendation platform built with React Native & Expo </i></p>
+
+[Backend](https://github.com/zenpai6996/Kitaab-backend)
 
 <p align="center">
   <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
@@ -30,7 +32,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 - ✅ Add your favorite books with captions & ratings ⭐  
 - ✅ User profiles with personalized book lists 👤  
 - ✅ Infinite scrolling  🚀  
-[Backend](https://github.com/zenpai6996/Kitaab-backend)
+
 
 
 
