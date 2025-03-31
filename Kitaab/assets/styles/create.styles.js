@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         height: 48,
-        color: COLORS.textDark,
+        color: COLORS.placeholderText,
     },
     textArea: {
         backgroundColor: COLORS.inputBackground,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         borderColor: COLORS.border,
         padding: 20,
         height: 100,
-        color: COLORS.textDark,
+        color: COLORS.placeholderText,
     },
     ratingContainer: {
         flexDirection: "row",
