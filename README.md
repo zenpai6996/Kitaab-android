@@ -9,7 +9,11 @@
 
 
 
-<p align="center"><i>A book recommendation platform built with React Native & Expo</i></p>
+<p align="center"><i>A book recommendation platform built with React Native & Expo </i></p>
+
+  
+
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
@@ -21,6 +25,8 @@
   <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white">
 </p>
 
+[Backend](https://github.com/zenpai6996/Kitaab-backend)
+
 
 ## 📖 About  
 Kitaab is a mobile app designed for book lovers, helping users discover and share book recommendations. Built with **React Native**, **Expo**, and **Node.js**, it provides an engaging reading community experience.  
@@ -29,8 +35,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 - ✅ Browse & discover book recommendations 📚  
 - ✅ Add your favorite books with captions & ratings ⭐  
 - ✅ User profiles with personalized book lists 👤  
-- ✅ Infinite scrolling & pull-to-refresh 🚀  
-- ✅ Smooth UI with **React Native & Expo** 🎨  
+- ✅ Infinite scrolling  🚀  
 
 
 
@@ -43,7 +48,7 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
 
 ## 🤝 Contribution
 
-### you're welcome to make contributions to enhance the Fillum-Android project. To contribute:
+### You're welcome to make contributions to enhance the Fillum-Android project. To contribute:
 
 1. **Fork the Repository**: Click on the 'Fork' button at the top right of this page.
 2. **Create a New Branch**: For your feature or bugfix.
@@ -57,9 +62,6 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
    ```
 5. **Create a Pull Request**: Describe your changes and submit the pull request for review.
 
-<p align="right">
-  <a href="#overview"><img src="https://img.shields.io/badge/Back%20to%20Top-%E2%86%91-blue" alt="Back to Top"></a>
-</p>
 
 
 ---
