@@ -29,6 +29,7 @@
 [![GitHub Repo](https://badgen.net/badge/icon/github?icon=github&label=Kitaab%20Backend)](https://github.com/zenpai6996/Kitaab-backend)
 
 </div>
+
 ##  📖 About  
 Kitaab is a mobile app designed for book lovers, helping users discover and share book recommendations. Built with **React Native**, **Expo**, and **Node.js**, it provides an engaging reading community experience.  
 
