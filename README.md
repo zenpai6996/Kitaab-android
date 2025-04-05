@@ -30,7 +30,7 @@
 
 </div>
 
-##  📖 About  
+##  About  
 Kitaab is a mobile app designed for book lovers, helping users discover and share book recommendations. Built with **React Native**, **Expo**, and **Node.js**, it provides an engaging reading community experience.  
 
 ## ✨ Features  
@@ -64,7 +64,9 @@ Kitaab is a mobile app designed for book lovers, helping users discover and shar
    ```
 5. **Create a Pull Request**: Describe your changes and submit the pull request for review.
 
-
+<p align="right">
+  <a href="#About"><img src="https://img.shields.io/badge/Back%20to%20Top-%E2%86%91-blue" alt="Back to Top"></a>
+</p>
 
 ---
 
