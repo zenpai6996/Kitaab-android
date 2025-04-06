@@ -1,7 +1,7 @@
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/96c4c130-354c-4214-89b7-d98bc8f74ba8" alt="Kitaab Banner" width="25%">
+</div>
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/96c4c130-354c-4214-89b7-d98bc8f74ba8" alt="Kitaab Logo" width="180">
-</p>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?size=30&center=true&vCenter=true&width=600&lines=Welcome+to+Kitaab📖;Discover+Great+Books;Share+Your+Recommendations!">
