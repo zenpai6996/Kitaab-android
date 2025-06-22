@@ -30,6 +30,13 @@
 
 </div>
 
+```
+
+API SERVICE HAS BEEN DISCONTINUED 
+
+```
+
+
 ##  About  
 Kitaab is a mobile app designed for book lovers, helping users discover and share book recommendations. Built with **React Native**, **Expo**, and **Node.js**, it provides an engaging reading community experience.  
 
